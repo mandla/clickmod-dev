@@ -11,3 +11,33 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.main {
+  width: 700px;
+  border-radius: 15px;
+  background-color: #00bbcc;
+}
+
+.header {
+  background-color: #424242;
+  color: whitesmoke;
+  padding: 10px;
+  font-size: 28px;
+  border-radius: 15px;
+  font-family: 'Recursive', sans-serif;
+}
+
+.day {
+  padding: 15px;
+  color: whitesmoke;
+  font-family: 'Recursive', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.temp {
+  padding: 15px;
+  color: whitesmoke;
+  font-family: 'Recursive', sans-serif;
+  font-size: 18px;
+}
