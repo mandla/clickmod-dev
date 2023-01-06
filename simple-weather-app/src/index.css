@@ -12,6 +12,11 @@ code {
     monospace;
 }
 
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
 .main {
   width: 700px;
   border-radius: 15px;
