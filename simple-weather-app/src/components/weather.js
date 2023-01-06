@@ -2,13 +2,21 @@ import React from 'react';
 import '../index.css';
 import { Card } from 'semantic-ui-react';
 import moment from 'moment';
+import { Button } from 'semantic-ui-react';
+
+const refresh = () => {
+    window.location.reload();
+}
 
 const WeatherCard = ({weatherData}) => (
     <div className="main">
-            <p className="header">{weatherData.name}</p>
+            <div className="top">
+                <p className="header">{weatherData.name}</p>
+                <Button className="button" inverted color='blue' circular icon='refresh' onClick={refresh}/>
+            </div>    
         <div className="flex">  
-            <p className="day">Day: {moment().format('dddd')}</p>    
-            <p className="day">Date: {moment().format('LL')}</p>
+            <p className="day">Day: {moment().format('dddd')}, <span>{moment().format('LL')}</span></p>    
+            <p className="description"> {weatherData.weather[0].main}</p>
         </div>    
 
         <div className="flex">
@@ -19,15 +27,6 @@ const WeatherCard = ({weatherData}) => (
             <p className="sunrise-sunset">Sunrise: { new Date(weatherData.sys.sunrise * 1000).toLocaleTimeString('en-IN') }</p>
             <p className="sunrise-sunset">Sunset: { new Date(weatherData.sys.sunset * 1000).toLocaleTimeString('en-IN') }</p>
         </div>
-        {/* // <Card>
-        //     <Card.Content>
-        //         <Card.Header className="header">City Name: { weatherData.name }</Card.Header>            
-        //  
-        //         <p>Description: { weatherData.weather[0].main }</p>
-        //         <p>Windspeed: { weatherData.main.windspeed }</p>
-        //         <p>Visibility: { weatherData.main.visibility }</p>
-        //     </Card.Content>           
-        // </Card> */}
     </div>
 )
 
