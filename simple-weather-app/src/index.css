@@ -12,6 +12,11 @@ code {
     monospace;
 }
 
+.button {
+  width: 35px;
+  height: 35px;
+}
+
 .description {
   padding: 15px;
   color: whitesmoke;
