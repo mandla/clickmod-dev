@@ -10,6 +10,9 @@ const WeatherCard = ({weatherData}) => (
             <p>Sunrise: { weatherData.sys.sunrise }</p>
             <p>Sunset: { weatherData.sys.sunset }</p>
             <p>Description: { weatherData.weather[0].description }</p>
+            <p>Humidity: { weatherData.weather[0].humidity }</p>
+            <p>Windspeed: { weatherData.sys.windspeed }</p>
+            <p>Visibility: { weatherData.sys.visibility }</p>
         </Card.Content>           
     </Card>
 )
