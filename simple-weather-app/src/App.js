@@ -21,7 +21,7 @@ useEffect(() => {
       setLong(position.coords.longitude);
     });
 
-    await fetch(`${process.env.REACT_APP_API_URL}/weather/?lat=${lat}&lon=${long}&units=metric&APPID=${process.env.REACT_APP_API_KEY}`)
+    await fetch(`${WEATHER_API_URL}/weather/?lat=${lat}&lon=${long}&units=metric&APPID=${WEATHER_API_KEY}`)
     .then(res => res.json())
     .then(result => {
       setData(result)
