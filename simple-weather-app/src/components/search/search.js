@@ -22,7 +22,12 @@ const Search = ({ onSearchChange }) => {
         };
       });
   };
-  
+
+  const handleOnChange = (searchData) => {
+    setSearch(searchData);
+    onSearchChange(searchData);
+  };
+
 };
 
 export default Search;
