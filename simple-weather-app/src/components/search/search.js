@@ -28,6 +28,15 @@ const Search = ({ onSearchChange }) => {
     onSearchChange(searchData);
   };
 
+  return (
+    <AsyncPaginate
+      placeholder="Search for a specific city"
+      debounceTimeout={600}
+      value={search}
+      onChange={handleOnChange}
+      loadOptions={loadOptions}
+    />
+  );
 };
 
 export default Search;
