@@ -27,10 +27,10 @@ code {
 
 .top {
   height: 60px;
-  background-color: red;
-  color: black;
+  background-color: #424242;
+  color: whitesmoke;
   padding: 10px;
-  border-radius: 22px 22px 0 0;
+  border-radius: 20px 20px 0 0;
   font-family: 'Recursive', sans-serif;
   display: flex;
   justify-content: space-between;
@@ -42,14 +42,14 @@ code {
 }
 
 .main {
-  width: 500px;
-  border-radius: 20px;
+  width: 700px;
+  border-radius: 15px;
   background-color: #00bbcc;
 }
 
 .header {
   background-color: #424242;
-  color: black;
+  color: whitesmoke;
   padding: 10px;
   font-size: 28px;
   border-radius: 15px;
@@ -57,7 +57,7 @@ code {
 }
 
 .day {
-  padding: 20px;
+  padding: 15px;
   color: whitesmoke;
   font-family: 'Recursive', sans-serif;
   font-size: 24px;
@@ -68,5 +68,5 @@ code {
   padding: 15px;
   color: whitesmoke;
   font-family: 'Recursive', sans-serif;
-  font-size: 20px;
+  font-size: 18px;
 }
