@@ -10,16 +10,27 @@ function App() {
 
 const [currentWeather, setCurrentWeather] = useState(null);
 const [forecast, setForecast] = useState(null);
-const [lat, setLat] = useState([]);
-const [long, setLong] = useState([]);
+const [lat, setLat] = useState(null);
+const [long, setLong] = useState(null);
 const [data, setData] = useState([]);
 
 useEffect(() => {
+  navigator.geolocation.getCurrentPosition(function(position) {
+    setLat(position.coords.latitude);
+    setLong(position.coords.longitude);
+  });
+})
+
+useEffect(() => {
   const fetchData = async () => {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      setLat(position.coords.latitude);
-      setLong(position.coords.longitude);
-    });
+    // navigator.geolocation.getCurrentPosition(function(position) {
+    //   setLat(position.coords.latitude);
+    //   setLong(position.coords.longitude);
+    if(!lat || !long){
+      return;
+    }
+
+    // });
 
     await fetch(`${WEATHER_API_URL}/weather/?lat=${lat}&lon=${long}&units=metric&APPID=${WEATHER_API_KEY}`)
     .then(res => res.json())
@@ -52,22 +63,18 @@ const handleOnSearchChange = (searchData) => {
     .catch(console.log);
 };
 
-
 return (
-  
-
 
   <div className="container">
     <Search onSearchChange={handleOnSearchChange} />
     {currentWeather && <CurrentWeather data={currentWeather} />}
     {forecast && <Forecast data={forecast} />}
 
-    {(typeof data.main != 'undefined') ? (
+    {/* {(typeof data.main != 'undefined') ? (
         <Weather weatherData={data}/>
       ): (
         <div></div>
-      )}
-
+      )} */}
 
   </div>
 );
