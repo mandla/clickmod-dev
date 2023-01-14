@@ -70,11 +70,11 @@ return (
     {currentWeather && <CurrentWeather data={currentWeather} />}
     {forecast && <Forecast data={forecast} />}
 
-    {/* {(typeof data.main != 'undefined') ? (
+    {(typeof data.main != 'undefined') ? (
         <Weather weatherData={data}/>
       ): (
         <div></div>
-      )} */}
+      )}
 
   </div>
 );
